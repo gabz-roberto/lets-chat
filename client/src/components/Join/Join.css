@@ -1,0 +1,51 @@
+.joinOutsideContainer {
+  padding: 40px;
+  background-color: #EEE;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.joinInnerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head-title {
+  width: 100%;
+  margin-bottom: 40px;
+  color: #222;
+  border-bottom: 1px solid #222;
+  text-align: center;
+  cursor: default;
+  font-weight: 300;
+  padding: 10px;
+}
+
+.joinInput {
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #aaa;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.btnJoin {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1f8a1f;
+  color: #fff;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btnJoin:hover {
+    background-color: #1b7a1b;
+}
