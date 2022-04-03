@@ -3,6 +3,7 @@ const socketio = require("socket.io");
 const http = require("http");
 
 const router = require("./router");
+const { addUser, getUser, removeUser, getUsersInRoom } = require("./users");
 
 const app = express();
 
@@ -12,13 +13,22 @@ const io = socketio(server);
 
 // socketio config
 io.on("connection", (socket) => {
-  console.log("Conectado");
+  socket.on("join", ({ name, room }, callback) => {
+    const { error, user } = addUser({ id: socket.id, name, room });
 
-  socket.on('join', ({ name, room }, callback) => {
-    console.log(name, room)
+    if (error) {
+      return callback(error);
+    }
+
+    // mensagem ao usuário
+    socket.emit('message', { user: 'admin', text: `Bem vindo(a) ${user.name}, você está na sala ${user.room}`})
+    // mensagem aos usuários da sala
+    socket.broadcast.to(user.room).emit('message', { user: 'admin', text: `${user.name} entrou na sala.`})
+
+    socket.join(user.room);
 
     callback();
-  })
+  });
 
   socket.on("disconnect", () => {
     console.log("Desconectado");
