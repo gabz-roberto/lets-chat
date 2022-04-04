@@ -13,7 +13,6 @@ const io = socketio(server);
 // usado para requests em tempo real
 
 app.use(cors());
-app.use(router());
 
 // socketio config
 io.on("connection", (socket) => {
