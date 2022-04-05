@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Input.css";
 
-const Input = ({message, sendMessage, setMessage}) => {
+const Input = ({ message, sendMessage, setMessage }) => {
   return (
     <form className="inputForm">
       <input
@@ -15,7 +15,9 @@ const Input = ({message, sendMessage, setMessage}) => {
           event.key === "Enter" ? sendMessage(event) : null
         }
       />
-      <button className="btnSend" onClick={event => sendMessage(event)}>Enviar</button>
+      <button className="btnSend" onClick={(event) => sendMessage(event)}>
+        Enviar
+      </button>
     </form>
   );
 };

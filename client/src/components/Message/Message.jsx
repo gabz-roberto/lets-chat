@@ -11,7 +11,7 @@ const Message = ({ message: { user, text }, name }) => {
     currentUser = true;
   }
 
-  return currentUser ? (
+  return currentUser ? (  
     <div className="messageContent justifyEnd">
       <p className="sendText pr-10">{trimmedName}</p>
       <div className="msgBox bgBlue">

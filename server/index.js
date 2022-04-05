@@ -12,16 +12,14 @@ const server = http.createServer(app);
 const io = socketio(server);
 // usado para requests em tempo real
 
-app.use(cors());
-
 // socketio config
 io.on("connection", (socket) => {
   socket.on("join", ({ name, room }, callback) => {
     const { error, user } = addUser({ id: socket.id, name, room });
 
-    if (error) {
-      return callback(error);
-    }
+    if (error) return callback(error);
+
+    socket.join(user.room);
 
     // mensagem ao usuário
     socket.emit("message", {
