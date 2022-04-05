@@ -1,4 +1,7 @@
 # Let's Chat
+
+![lets-chat](https://user-images.githubusercontent.com/44988043/161760951-381f6b81-4a43-4e2e-bb52-03475342b6d5.png)
+
 <p>
   Let's chat trata-se de uma aplicação desenvolvida utilizando ReactJS, NodeJS e Socket.io. A aplicação é um chat onde múltiplos usuários podem se comunicar em tempo real,
   possui uma interface intuitiva e uma biblioteca de emojis.
