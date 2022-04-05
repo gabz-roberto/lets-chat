@@ -46,7 +46,11 @@ io.on("connection", (socket) => {
   });
 
   socket.on("disconnect", () => {
-    console.log("Desconectado");
+    const user = removeUser(socket.id);
+
+    if(user) {
+      io.to(user.room).emit('message', { user: 'admin', text: `${user.name} deixou a sala.`})
+    }
   });
 });
 

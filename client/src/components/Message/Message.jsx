@@ -11,9 +11,9 @@ const Message = ({ message: { user, text }, name }) => {
     currentUser = true;
   }
 
-  return currentUser ? (  
+  return currentUser ? (
     <div className="messageContent justifyEnd">
-      <p className="sendText pr-10">{trimmedName}</p>
+      <p className="sentText pr-10">{trimmedName}</p>
       <div className="msgBox bgBlue">
         <p className="msgText colorWhite">{text}</p>
       </div>
@@ -23,7 +23,7 @@ const Message = ({ message: { user, text }, name }) => {
       <div className="msgBox bgLight">
         <p className="msgText colorDark">{text}</p>
       </div>
-      <p className="sendText pl-10">{user}</p>
+      <p className="sentText pl-10">{user}</p>
     </div>
   );
 };
